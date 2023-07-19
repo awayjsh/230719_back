@@ -1,0 +1,33 @@
+import time
+
+N = int(input())
+product = []
+part_product = []
+total = 0
+
+for i in range(N) :
+
+    product.append(int(input()))
+
+product.sort(reverse = True)
+
+for j in range ((N//3) + 1) :
+
+    list_first = j * 3
+    list_last =  3 + j * 3
+
+    if list_last > len(product) :
+
+        list_last = len(product)
+
+    part_product = product[list_first : list_last]
+
+    if len(part_product) == 3 :
+
+        total = total + part_product[0] + part_product[1]
+
+    else :
+
+        total = total + sum(part_product)
+
+print(total)

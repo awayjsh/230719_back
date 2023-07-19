@@ -1,0 +1,41 @@
+from string import ascii_lowercase
+from string import ascii_uppercase
+
+word = input()
+word_dictionary = {}
+max = 0
+danger = False
+
+for i in range (len(word)) :
+
+    if word[i].upper() not in word_dictionary.keys() :
+
+        word_dictionary[word[i].upper()] = 1
+
+    else :
+
+        word_dictionary[word[i].upper()] += 1
+
+for i in word_dictionary.values() :
+
+    if i > max :
+
+        max = i
+
+for key, value in word_dictionary.items() :
+
+    if danger == False and value == max :
+
+        ans = key
+        danger = True
+
+    elif danger == True and value == max :
+
+        print("?")
+
+    break
+
+
+    
+        
+
