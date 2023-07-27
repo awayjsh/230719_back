@@ -1,0 +1,33 @@
+n = int(input())
+color = list(input())
+ans_list = []
+part_list = []
+ans = 0
+
+for i in range(n) :
+
+    if len(part_list) == 0 or part_list[0] == color[i] :
+
+        part_list.append(color[i])
+    
+    else :
+
+        ans_list.append(part_list)
+        part_list = []
+        part_list.append(color[i])
+
+ans_list.append(part_list)
+
+for i in range(len(ans_list)) :
+
+    if len(ans_list[i]) != 1 :
+
+        ans_list[i] = list(ans_list[i][0])
+
+if ans_list.count(['B']) >= ans_list.count(['R']) :
+
+    print(ans_list.count(['R']) + 1)
+
+else :
+
+    print(ans_list.count(['B']) + 1)
